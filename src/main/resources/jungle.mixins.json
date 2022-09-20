@@ -1,0 +1,18 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "acme.jungleware.jungle.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+  ],
+  "client": [
+    "ClientMixin",
+    "KeyboardMixin",
+    "HUDMixin",
+    "SimpleOptionMixin"
+
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

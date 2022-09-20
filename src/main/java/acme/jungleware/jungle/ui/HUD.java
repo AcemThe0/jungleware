@@ -1,0 +1,32 @@
+package acme.jungleware.jungle.ui;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+import acme.jungleware.jungle.module.Mod;
+import net.minecraft.client.MinecraftClient;
+import acme.jungleware.jungle.module.ModuleMan;
+import net.minecraft.client.util.math.MatrixStack;
+
+public class HUD {
+    private static MinecraftClient mc = MinecraftClient.getInstance();
+
+    public static void render(MatrixStack matrices, float tickDelta) {
+       renderArrayList(matrices);
+    }
+
+    public static void renderArrayList(MatrixStack matrices) {
+        int index = 0;
+        int sWidth = mc.getWindow().getScaledWidth();
+        int sHeight = mc.getWindow().getScaledHeight();
+
+        List<Mod> enabled = ModuleMan.INSTANCE.getEnabledModules();
+        enabled.sort(Comparator.comparingInt(m -> (int)mc.textRenderer.getWidth(((Mod)m).getName())).reversed());
+
+        for (Mod module : ModuleMan.INSTANCE.getEnabledModules()) {
+            mc.textRenderer.drawWithShadow(matrices, module.getName(), (sWidth - 4) - mc.textRenderer.getWidth(module.getName()), 10 + (index * mc.textRenderer.fontHeight), -1);
+            index++;
+        }
+    }
+}
