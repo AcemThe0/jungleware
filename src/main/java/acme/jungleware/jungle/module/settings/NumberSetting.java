@@ -39,6 +39,10 @@ public class NumberSetting extends Setting {
         return (float)value;
     }
 
+    public long getValueLong() {
+        return (long)value;
+    }
+
     public int getValueInt() {
         return (int)value;
     }

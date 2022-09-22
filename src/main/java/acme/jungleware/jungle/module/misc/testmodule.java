@@ -11,7 +11,7 @@ import acme.jungleware.jungle.module.settings.BooleanSetting;
 public class testmodule extends Mod {
     public NumberSetting slide = new NumberSetting("slider", 0, 10, 3, 1);
     public BooleanSetting check = new BooleanSetting("check", true);
-    public ModeSetting mode = new ModeSetting("Mode", "Test1","Test1","Test 2","Test 3");
+    public ModeSetting mode = new ModeSetting("Mode", "Test1","Test1","Test2","Test3");
     
     public testmodule() {
         super("TestModule", "codemonkey", Category.CHIMPSEE);

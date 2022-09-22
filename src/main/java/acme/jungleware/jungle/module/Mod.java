@@ -93,10 +93,10 @@ public class Mod {
     }
 
     public enum Category {
-        MONKEYSEE("Monkey See"),
-        MONKEYDO("Monkey Do"),
-        CHIMP("Chimpin' Modules"),
-        CHIMPSEE("Chimp Interface");
+        MONKEYSEE("Monkey See"),        //Render
+        MONKEYDO("Monkey Do"),          //Movement
+        CHIMP("Chimpin' Modules"),      //Combat
+        CHIMPSEE("Chimp Interface");    //UI
 
         public String name;
 

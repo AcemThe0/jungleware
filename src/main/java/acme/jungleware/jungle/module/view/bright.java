@@ -11,7 +11,7 @@ public class bright extends Mod {
 
     public bright() {
         super("Nightvision", "Lurk.", Category.MONKEYSEE);
-        this.setKey(GLFW.GLFW_KEY_N);
+        //this.setKey(GLFW.GLFW_KEY_N);
         addSettings(gamma);
     }
 
@@ -20,7 +20,7 @@ public class bright extends Mod {
     }
 
     @Override
-    public void onTick() {
+    public void onEnable() {
         setGamma(gamma.getValueFloat());
         super.onTick();
     }

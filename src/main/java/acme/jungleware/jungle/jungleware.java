@@ -18,7 +18,7 @@ public class jungleware implements ModInitializer {
 	
 	@Override
 	public void onInitialize() {
-		//--/V/craft approved!
+		//   /V/craft approved!
 	
 		LOGGER.info("OOK!");
 	}
