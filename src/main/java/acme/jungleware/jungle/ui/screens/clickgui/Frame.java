@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import acme.jungleware.jungle.module.Mod;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;
+import acme.jungleware.jungle.module.misc.logo;
 import acme.jungleware.jungle.module.ModuleMan;
 import acme.jungleware.jungle.module.Mod.Category;
 import net.minecraft.client.util.math.MatrixStack;
@@ -40,7 +41,7 @@ public class Frame {
     }
 
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        mc.textRenderer.drawWithShadow(matrices, "Jungleware0.0.1", 0, 0, -1);
+        mc.textRenderer.drawWithShadow(matrices, "Jungleware0.0.2", 0, 0, new Color(logo.red.getValueInt(), logo.green.getValueInt(), logo.blue.getValueInt(), logo.alpha.getValueInt()).getRGB());
         DrawableHelper.fill(matrices, x, y, x+width, y+height, new Color(0, 0, 0, 180).getRGB());
         
         mc.textRenderer.drawWithShadow(matrices, category.name, x+2, y+((height/2)-mc.textRenderer.fontHeight/2), new Color(0, 190, 0, 180).getRGB());

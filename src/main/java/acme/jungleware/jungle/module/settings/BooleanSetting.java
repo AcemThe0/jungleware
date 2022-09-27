@@ -1,6 +1,6 @@
 package acme.jungleware.jungle.module.settings;
 
-public class BooleanSetting extends Setting{
+public class BooleanSetting extends Setting {
     private boolean enabled;
 
     public BooleanSetting(String name, boolean defaultValue) {

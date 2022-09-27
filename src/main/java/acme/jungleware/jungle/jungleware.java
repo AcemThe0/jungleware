@@ -24,7 +24,7 @@ public class jungleware implements ModInitializer {
 	}
 	
 	public void onKeyPress(int key, int action) {
-		if (action == GLFW.GLFW_PRESS) {
+		if (action == GLFW.GLFW_PRESS && mc.player != null) {
 			for (Mod module : ModuleMan.INSTANCE.getModules()) {
 				if (key == module.getKey()) module.toggle();
 			}

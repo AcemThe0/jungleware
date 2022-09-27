@@ -13,7 +13,7 @@ public class sprint extends Mod {
     public ModeSetting mode = new ModeSetting("Mode", "Sprint", "Sprint", "MonkeyHop");
 
     public sprint() {
-        super("Quadrupedalism", "Get on all fours.", Category.MONKEYDO);
+        super("Quadrupedalism", "Get on all fours!", Category.MONKEYDO);
         //this.setKey(GLFW.GLFW_KEY_V);
         addSettings(speed, mode);
     }
@@ -27,6 +27,7 @@ public class sprint extends Mod {
 
             case "MonkeyHop":
             mc.player.airStrafingSpeed = speed.getValueFloat();
+            if (mc.player.isOnGround() && mc.player.isSprinting()) mc.player.jump();
             break;
         }
         super.onTick();
