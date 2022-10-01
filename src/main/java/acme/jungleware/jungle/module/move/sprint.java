@@ -1,21 +1,25 @@
 package acme.jungleware.jungle.module.move;
 
+import java.lang.Math;
 import org.lwjgl.glfw.GLFW;
 import acme.jungleware.jungle.module.Mod;
 import acme.jungleware.jungle.module.settings.ModeSetting;
-import acme.jungleware.jungle.ui.screens.clickgui.setting.ModeBox;
 import acme.jungleware.jungle.module.settings.NumberSetting;
+import acme.jungleware.jungle.module.settings.BooleanSetting;
 import acme.jungleware.jungle.ui.screens.clickgui.setting.Slider;
+import acme.jungleware.jungle.ui.screens.clickgui.setting.ModeBox;
+import acme.jungleware.jungle.ui.screens.clickgui.setting.CheckBox;
 
 
 public class sprint extends Mod {
-    public NumberSetting speed = new NumberSetting("Speed", 0.00, 10.00, 0.01, 0.01);
+    public NumberSetting speed = new NumberSetting("Speed", 0.00, 10.00, 0.10, 0.01);
     public ModeSetting mode = new ModeSetting("Mode", "Sprint", "Sprint", "MonkeyHop");
+    public BooleanSetting jump = new BooleanSetting("AutoJump", false);
 
     public sprint() {
         super("Quadrupedalism", "Get on all fours!", Category.MONKEYDO);
         //this.setKey(GLFW.GLFW_KEY_V);
-        addSettings(speed, mode);
+        addSettings(speed, mode, jump);
     }
     
     @Override
@@ -27,10 +31,11 @@ public class sprint extends Mod {
 
             case "MonkeyHop":
             mc.player.airStrafingSpeed = speed.getValueFloat();
-            if (mc.player.isOnGround() && mc.player.isSprinting()) mc.player.jump();
             break;
+        }
+        if (jump.isEnabled()) {
+            if (mc.player.forwardSpeed != 0 && mc.player.isOnGround() || mc.player.sidewaysSpeed != 0 && mc.player.isOnGround()) mc.player.jump();
         }
         super.onTick();
     }
-
 }

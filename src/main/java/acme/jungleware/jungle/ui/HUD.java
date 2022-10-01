@@ -5,11 +5,15 @@ import java.util.Comparator;
 import java.util.List;
 import java.awt.Color;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import acme.jungleware.jungle.module.Mod;
 import net.minecraft.client.MinecraftClient;
+import acme.jungleware.jungle.utils.mathUtils;
 import acme.jungleware.jungle.module.ModuleMan;
 import net.minecraft.client.util.math.MatrixStack;
 import acme.jungleware.jungle.module.misc.arraylist;
+import acme.jungleware.jungle.module.misc.coordinates;
 
 public class HUD {
     private static MinecraftClient mc = MinecraftClient.getInstance();
@@ -26,11 +30,16 @@ public class HUD {
         List<Mod> enabled = ModuleMan.INSTANCE.getEnabledModules();
         enabled.sort(Comparator.comparingInt(m -> (int)mc.textRenderer.getWidth(((Mod)m).getName())).reversed());
 
-    if (arraylist.on.isEnabled()) {
-        for (Mod module : ModuleMan.INSTANCE.getEnabledModules()) {
-            mc.textRenderer.drawWithShadow(matrices, module.getName(), (sWidth - 4) - mc.textRenderer.getWidth(module.getName()), 10 + (index * mc.textRenderer.fontHeight), new Color(arraylist.red.getValueInt(), arraylist.green.getValueInt(), arraylist.blue.getValueInt(), arraylist.alpha.getValueInt()).getRGB());
-            index++;
+        if (coordinates.on.isEnabled()) {
+            String coords = coordinates.getCoords();
+            mc.textRenderer.drawWithShadow(matrices, coords, (sWidth - 4) - mc.textRenderer.getWidth(coords), sHeight-15, new Color(arraylist.red.getValueInt(), arraylist.green.getValueInt(), arraylist.blue.getValueInt(), arraylist.alpha.getValueInt()).getRGB());
         }
-    }
+
+        if (arraylist.on.isEnabled()) {
+            for (Mod module : ModuleMan.INSTANCE.getEnabledModules()) {
+                mc.textRenderer.drawWithShadow(matrices, module.getName(), (sWidth - 4) - mc.textRenderer.getWidth(module.getName()), 10 + (index * mc.textRenderer.fontHeight), new Color(arraylist.red.getValueInt(), arraylist.green.getValueInt(), arraylist.blue.getValueInt(), arraylist.alpha.getValueInt()).getRGB());
+                index++;
+            }
+        }
     }
 }

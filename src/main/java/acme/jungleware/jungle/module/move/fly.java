@@ -8,7 +8,7 @@ import acme.jungleware.jungle.module.settings.NumberSetting;
 import acme.jungleware.jungle.ui.screens.clickgui.setting.Slider;
 
 public class fly extends Mod {
-    public NumberSetting speed = new NumberSetting("Speed", 0.00, 10.00, 0.01, 0.01);
+    public NumberSetting speed = new NumberSetting("Speed", 0.00, 10.00, 0.10, 0.01);
     public ModeSetting mode = new ModeSetting("Mode", "Flight", "Flight", "Saki", "Velocity");
 
     public fly() {

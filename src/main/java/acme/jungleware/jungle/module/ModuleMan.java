@@ -47,10 +47,12 @@ public class ModuleMan {
 
         modules.add(new bright());
         modules.add(new sense());
+        modules.add(new spinbot());
         //modules.add(new time());
 
         //modules.add(new totem());
 
+        modules.add(new coordinates());
         modules.add(new logo());
         modules.add(new arraylist());
         modules.add(new testmodule());

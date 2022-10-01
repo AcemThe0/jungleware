@@ -1,8 +1,7 @@
 package acme.jungleware.jungle.ui.screens.clickgui.setting;
 
 import java.awt.Color;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
+import acme.jungleware.jungle.utils.mathUtils;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.util.math.MatrixStack;
 import acme.jungleware.jungle.module.settings.Setting;
@@ -29,12 +28,12 @@ public class Slider extends Component{
             if(diff == 0) {
                 numSet.setValue(numSet.getMin());
             } else {
-                numSet.setValue(roundToPlace(((diff/parent.parent.width)*(numSet.getMax()-numSet.getMin())+numSet.getMin()), 1));
+                numSet.setValue(mathUtils.roundToPlace(((diff/parent.parent.width)*(numSet.getMax()-numSet.getMin())+numSet.getMin()), 1));
             }
         }
 
         int textOffset = ((parent.parent.height/2)-mc.textRenderer.fontHeight/2);
-        mc.textRenderer.drawWithShadow(matrices, numSet.getName() + ": " + roundToPlace(numSet.getValue(), 1), parent.parent.x + 2, parent.parent.y + parent.offset + offset + textOffset, -1);
+        mc.textRenderer.drawWithShadow(matrices, numSet.getName() + ": " + mathUtils.roundToPlace(numSet.getValue(), 2), parent.parent.x + 2, parent.parent.y + parent.offset + offset + textOffset, -1);
         super.render(matrices, mouseX, mouseY, delta);
     }
 
@@ -48,14 +47,5 @@ public class Slider extends Component{
     public void mouseReleased(double mouseX, double mouseY, int button) {
         sliding = false;
         super.mouseReleased(mouseX, mouseY, button);
-    }
-
-    private double roundToPlace(double value, int place) {
-        if (place < 0) {
-            return value;
-        }
-        BigDecimal bd = new BigDecimal(value);
-        bd = bd.setScale(place, RoundingMode.HALF_UP);
-        return bd.doubleValue();
     }
 }

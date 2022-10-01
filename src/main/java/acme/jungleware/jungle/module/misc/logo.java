@@ -11,7 +11,7 @@ public class logo extends Mod {
     public static NumberSetting alpha = new NumberSetting("Alpha", 0.00, 255.00, 255.00, 1.00);
 
     public logo() {
-        super("Logo", "Jungleware!", Category.CHIMPSEE);
+        super("Watermark", "Jungleware!", Category.CHIMPSEE);
         addSettings(red, green, blue, alpha);
     }
 

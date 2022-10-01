@@ -9,7 +9,8 @@
     "ClientMixin",
     "KeyboardMixin",
     "HUDMixin",
-    "SimpleOptionMixin"
+    "SimpleOptionMixin",
+    "PlayerMoveC2SPacketAccessor"
 
   ],
   "injectors": {
