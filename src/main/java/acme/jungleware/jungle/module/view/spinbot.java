@@ -17,9 +17,9 @@ public class spinbot extends Mod {
     @Override
     public void onTick() {
         if (rotation < 360) {rotation += speed.getValueFloat()*0.5;}
-        else {rotation = 90;};
+        else {rotation = 0;};
 
-        mc.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.LookAndOnGround(rotation, 0, mc.player.isOnGround()));
+        mc.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.LookAndOnGround(rotation, 90, mc.player.isOnGround()));
     super.onTick();
     }
 }
