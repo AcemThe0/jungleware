@@ -7,11 +7,12 @@ import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 
 public class spinbot extends Mod {
     public NumberSetting speed = new NumberSetting("Speed", 0.00, 180.00, 1.00, 0.01);
+    public NumberSetting pitch = new NumberSetting("Pitch", -90.00, 90.00, 90.00, 0.01);
     float rotation = 0;
 
     public spinbot() {
         super("Monkespin", "TF2", Category.MONKEYSEE);
-        addSetting(speed);
+        addSettings(speed, pitch);
     }
 
     @Override
@@ -19,7 +20,7 @@ public class spinbot extends Mod {
         if (rotation < 360) {rotation += speed.getValueFloat()*0.5;}
         else {rotation = 0;};
 
-        mc.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.LookAndOnGround(rotation, 90, mc.player.isOnGround()));
+        mc.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.LookAndOnGround(rotation, pitch.getValueFloat(), mc.player.isOnGround()));
     super.onTick();
     }
 }
