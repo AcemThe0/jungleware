@@ -44,6 +44,7 @@ public class ModuleMan {
     private void addModules() {
         modules.add(new fly());
         modules.add(new sprint());
+        modules.add(new nofall());
 
         modules.add(new bright());
         modules.add(new sense());
