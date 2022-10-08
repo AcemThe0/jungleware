@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 import acme.jungleware.jungle.module.Mod;
 import net.minecraft.client.gui.DrawableHelper;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.util.math.MatrixStack;
 import acme.jungleware.jungle.module.settings.Setting;
 import acme.jungleware.jungle.module.settings.ModeSetting;
@@ -44,7 +45,12 @@ public class ModuleButton {
 
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         DrawableHelper.fill(matrices, parent.x, parent.y + offset, parent.x + parent.width, parent.y + offset + parent.height, new Color(0, 0, 0, 160).getRGB());
-        if (isHovered(mouseX, mouseY)) DrawableHelper.fill(matrices, parent.x, parent.y + offset, parent.x + parent.width, parent.y + offset + parent.height, new Color(0, 0, 0, 20).getRGB());
+        if (isHovered(mouseX, mouseY)) {
+            int wWidth  = MinecraftClient.getInstance().getWindow().getScaledWidth();
+            int wHeight = MinecraftClient.getInstance().getWindow().getScaledHeight();
+            DrawableHelper.fill(matrices, parent.x, parent.y + offset, parent.x + parent.width, parent.y + offset + parent.height, new Color(0, 0, 0, 20).getRGB());
+            parent.mc.textRenderer.drawWithShadow(matrices, module.getDesc(), 5, wHeight-20, new Color(255, 255, 255, 255).getRGB());
+        }
 
         int textOffset = ((parent.height/2)-parent.mc.textRenderer.fontHeight/2);
         parent.mc.textRenderer.drawWithShadow(matrices, module.getName(), parent.x + 2, parent.y + offset + textOffset, module.isEnabled() ? new Color(255, 255, 0, 255).getRGB() : new Color(190, 190, 0, 255).getRGB());

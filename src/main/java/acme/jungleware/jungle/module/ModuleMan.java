@@ -45,6 +45,7 @@ public class ModuleMan {
         modules.add(new fly());
         modules.add(new nofall());
         modules.add(new sprint());
+        modules.add(new jockey());
 
         modules.add(new sense());
         modules.add(new spinbot());
@@ -53,6 +54,7 @@ public class ModuleMan {
 
         //modules.add(new totem());
         modules.add(new timer());
+        modules.add(new reach());
 
         modules.add(new logo());
         modules.add(new coordinates());

@@ -11,7 +11,10 @@
     "HUDMixin",
     "SimpleOptionMixin",
     "PlayerMoveC2SPacketAccessor",
-    "RenderTickCounterMixin"
+    "RenderTickCounterMixin",
+    "HorseBaseEntityMixin",
+    "ClientPlayerEntityAccessor",
+    "ClientPlayerInteractionManagerMixin"
 
   ],
   "injectors": {

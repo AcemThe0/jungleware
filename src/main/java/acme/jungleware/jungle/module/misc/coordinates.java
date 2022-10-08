@@ -1,8 +1,5 @@
 package acme.jungleware.jungle.module.misc;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import acme.jungleware.jungle.ui.HUD;
 import acme.jungleware.jungle.module.Mod;
 import acme.jungleware.jungle.utils.mathUtils;
 import acme.jungleware.jungle.module.settings.NumberSetting;
@@ -15,7 +12,7 @@ public class coordinates extends Mod {
     public static NumberSetting alpha = new NumberSetting("Alpha", 25.00, 255.00, 255.00, 1.00);
 
     public coordinates() {
-        super("Homing", "Find your way!", Category.CHIMPSEE);
+        super("Homing", "Find your location!", Category.CHIMPSEE);
         addSettings(red, green, blue, alpha);
     }
 

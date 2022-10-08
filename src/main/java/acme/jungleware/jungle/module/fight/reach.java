@@ -4,14 +4,14 @@ import acme.jungleware.jungle.module.Mod;
 import acme.jungleware.jungle.module.settings.NumberSetting;
 import acme.jungleware.jungle.ui.screens.clickgui.setting.Slider;
 
-public class timer extends Mod {
-    public static NumberSetting multiplier = new NumberSetting("Multiplier", 0.10, 5.00, 1.00, 0.10);
+public class reach extends Mod {
+    public static NumberSetting range = new NumberSetting("Range", 1.00, 16.00, 4.00, 0.10);
     public static boolean enabled = false;
 
 
-    public timer() {
-        super("Timer", "Limitless.", Category.CHIMP);
-        addSetting(multiplier);
+    public reach() {
+        super("Reach", "Orangutan hands!", Category.CHIMP);
+        addSetting(range);
     }
 
     @Override
@@ -27,8 +27,8 @@ public class timer extends Mod {
     }
 
 
-    public static double getMultiplier() {
-        return enabled ? multiplier.getValueFloat() : 1;
+    public static float getRange() {
+        return enabled ? range.getValueFloat() : 3;
     }
 
 }
