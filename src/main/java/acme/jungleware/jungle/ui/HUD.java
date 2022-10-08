@@ -30,16 +30,12 @@ public class HUD {
         List<Mod> enabled = ModuleMan.INSTANCE.getEnabledModules();
         enabled.sort(Comparator.comparingInt(m -> (int)mc.textRenderer.getWidth(((Mod)m).getName())).reversed());
 
-        if (coordinates.on.isEnabled()) {
             String coords = coordinates.getCoords();
-            mc.textRenderer.drawWithShadow(matrices, coords, (sWidth - 4) - mc.textRenderer.getWidth(coords), sHeight-15, new Color(arraylist.red.getValueInt(), arraylist.green.getValueInt(), arraylist.blue.getValueInt(), arraylist.alpha.getValueInt()).getRGB());
-        }
+            mc.textRenderer.drawWithShadow(matrices, coords, (sWidth - 4) - mc.textRenderer.getWidth(coords), sHeight-15, new Color(coordinates.red.getValueInt(), coordinates.green.getValueInt(), coordinates.blue.getValueInt(), coordinates.alpha.getValueInt()).getRGB());
 
-        if (arraylist.on.isEnabled()) {
             for (Mod module : ModuleMan.INSTANCE.getEnabledModules()) {
                 mc.textRenderer.drawWithShadow(matrices, module.getName(), (sWidth - 4) - mc.textRenderer.getWidth(module.getName()), 10 + (index * mc.textRenderer.fontHeight), new Color(arraylist.red.getValueInt(), arraylist.green.getValueInt(), arraylist.blue.getValueInt(), arraylist.alpha.getValueInt()).getRGB());
                 index++;
             }
-        }
     }
 }

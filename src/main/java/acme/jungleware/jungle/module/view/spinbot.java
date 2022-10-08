@@ -20,6 +20,8 @@ public class spinbot extends Mod {
         if (rotation < 360) {rotation += speed.getValueFloat()*0.5;}
         else {rotation = 0;};
 
+        mc.player.setHeadYaw(rotation);
+        mc.player.setBodyYaw(rotation);
         mc.player.networkHandler.sendPacket(new PlayerMoveC2SPacket.LookAndOnGround(rotation, pitch.getValueFloat(), mc.player.isOnGround()));
     super.onTick();
     }

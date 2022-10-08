@@ -43,18 +43,19 @@ public class ModuleMan {
 
     private void addModules() {
         modules.add(new fly());
-        modules.add(new sprint());
         modules.add(new nofall());
+        modules.add(new sprint());
 
-        modules.add(new bright());
         modules.add(new sense());
         modules.add(new spinbot());
+        modules.add(new bright());
         //modules.add(new time());
 
         //modules.add(new totem());
+        modules.add(new timer());
 
-        modules.add(new coordinates());
         modules.add(new logo());
+        modules.add(new coordinates());
         modules.add(new arraylist());
         modules.add(new testmodule());
     }

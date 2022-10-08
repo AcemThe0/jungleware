@@ -10,7 +10,8 @@
     "KeyboardMixin",
     "HUDMixin",
     "SimpleOptionMixin",
-    "PlayerMoveC2SPacketAccessor"
+    "PlayerMoveC2SPacketAccessor",
+    "RenderTickCounterMixin"
 
   ],
   "injectors": {
