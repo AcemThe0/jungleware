@@ -21,7 +21,8 @@ public class CheckBox extends Component {
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
         DrawableHelper.fill(matrices, parent.parent.x, parent.parent.y + parent.offset + offset, parent.parent.x + parent.parent.width, parent.parent.y + parent.offset + offset + parent.parent.height, new Color(0, 0, 0, 160).getRGB());
         int textOffset = ((parent.parent.height/2)-mc.textRenderer.fontHeight/2);
-        mc.textRenderer.drawWithShadow(matrices, boolSet.getName() + ": " + boolSet.isEnabled(), parent.parent.x + 2, parent.parent.y + parent.offset + offset + textOffset, new Color(0, 190, 0, 180).getRGB());
+        mc.textRenderer.drawWithShadow(matrices, boolSet.getName() /*+ ": " + boolSet.isEnabled()*/, parent.parent.x + 2, parent.parent.y + parent.offset + offset + textOffset, new Color(0, 190, 0, 180).getRGB());
+        DrawableHelper.fill(matrices, parent.parent.x + 4 + mc.textRenderer.getWidth(boolSet.getName()), parent.parent.y+parent.offset+offset+2, parent.parent.x + parent.parent.width-2, parent.parent.y + parent.offset + offset + parent.parent.height-2, boolSet.isEnabled() ? new Color(0, 190, 0, 160).getRGB() : new Color(0, 0, 0, 160).getRGB());
         super.render(matrices, mouseX, mouseY, delta);
     }
 

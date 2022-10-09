@@ -55,6 +55,7 @@ public class ModuleMan {
         //modules.add(new totem());
         modules.add(new timer());
         modules.add(new reach());
+        modules.add(new killaura());
 
         modules.add(new logo());
         modules.add(new coordinates());

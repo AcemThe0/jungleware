@@ -25,11 +25,13 @@ public class jungleware implements ModInitializer {
 	
 	public void onKeyPress(int key, int action) {
 		if (action == GLFW.GLFW_PRESS && mc.player != null) {
-			for (Mod module : ModuleMan.INSTANCE.getModules()) {
+			//if (mc.player.currentScreen != null) {
+				for (Mod module : ModuleMan.INSTANCE.getModules()) {
 				if (key == module.getKey()) module.toggle();
-			}
-	
-			if (key == GLFW.GLFW_KEY_RIGHT_SHIFT) mc.setScreen(ClickGUI.INSTANCE);
+				}
+
+				if (key == GLFW.GLFW_KEY_RIGHT_SHIFT) mc.setScreen(ClickGUI.INSTANCE);
+			//}
 		}
 	}
 	

@@ -6,7 +6,7 @@ import acme.jungleware.jungle.ui.screens.clickgui.setting.Slider;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 
 public class spinbot extends Mod {
-    public NumberSetting speed = new NumberSetting("Speed", 0.00, 180.00, 1.00, 0.01);
+    public NumberSetting speed = new NumberSetting("Speed", 0.00, 180.00, 90.00, 0.01);
     public NumberSetting pitch = new NumberSetting("Pitch", -90.00, 90.00, 90.00, 0.01);
     float rotation = 0;
 

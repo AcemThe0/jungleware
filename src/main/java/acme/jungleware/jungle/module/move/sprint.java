@@ -13,20 +13,20 @@ import acme.jungleware.jungle.ui.screens.clickgui.setting.CheckBox;
 
 public class sprint extends Mod {
     public NumberSetting speed = new NumberSetting("Speed", 0.00, 10.00, 0.10, 0.10);
-    public ModeSetting mode = new ModeSetting("Mode", "MonkeyHop", "Sprint", "MonkeyHop");
+    public NumberSetting height = new NumberSetting("Height", 0.10, 5.00, 0.50, 0.10);
+    public ModeSetting mode = new ModeSetting("Mode", "MonkeyHop", "PlaceHolder", "MonkeyHop");
     public BooleanSetting jump = new BooleanSetting("AutoJump", true);
 
     public sprint() {
         super("Quadrupedalism", "Get on all fours!", Category.MONKEYDO);
         //this.setKey(GLFW.GLFW_KEY_V);
-        addSettings(speed, mode, jump);
+        addSettings(speed, height, mode, jump);
     }
     
     @Override
     public void onTick() {
         switch (mode.getMode()) {
-            case "Sprint":
-            mc.player.setSprinting(true);
+            case "Placeholder":
             break;
 
             case "MonkeyHop":
@@ -34,7 +34,7 @@ public class sprint extends Mod {
             break;
         }
         if (jump.isEnabled()) {
-            if (mc.player.forwardSpeed != 0 && mc.player.isOnGround() || mc.player.sidewaysSpeed != 0 && mc.player.isOnGround()) mc.player.jump();
+            if (mc.player.forwardSpeed != 0 && mc.player.isOnGround() || mc.player.sidewaysSpeed != 0 && mc.player.isOnGround()) mc.player.addVelocity(0, height.getValueFloat(), 0);
         }
         super.onTick();
     }

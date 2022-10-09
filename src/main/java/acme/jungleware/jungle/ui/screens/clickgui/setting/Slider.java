@@ -23,7 +23,7 @@ public class Slider extends Component{
         
         double diff = Math.min(parent.parent.width, Math.max(0, mouseX - parent.parent.x));
         int renderWidth = (int)(parent.parent.width * (numSet.getValue() - numSet.getMin()) / (numSet.getMax() - numSet.getMin()));
-        DrawableHelper.fill(matrices, parent.parent.x, parent.parent.y + parent.offset + offset, parent.parent.x + renderWidth, parent.parent.y + parent.offset + offset + parent.parent.height, new Color(0, 190, 0, 160).getRGB());
+        DrawableHelper.fill(matrices, parent.parent.x, parent.parent.y + parent.offset + offset+2, parent.parent.x + renderWidth, parent.parent.y + parent.offset + offset + parent.parent.height-2, new Color(0, 190, 0, 160).getRGB());
         if (sliding) {
             if(diff == 0) {
                 numSet.setValue(numSet.getMin());

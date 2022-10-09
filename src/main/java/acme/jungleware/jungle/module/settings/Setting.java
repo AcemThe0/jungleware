@@ -2,7 +2,7 @@ package acme.jungleware.jungle.module.settings;
 
 public class Setting {
     private String name;
-    private boolean visible = false;
+    private boolean visible = true;
 
     public Setting(String name) {
         this.name = name;
