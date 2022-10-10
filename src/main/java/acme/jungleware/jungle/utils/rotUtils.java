@@ -13,7 +13,7 @@ public class rotUtils {
     }
 
     public static float getPitchToEnt(Entity entity) {
-        double y = entity.getY() + entity.getHeight() * .5;
+        double y = entity.getEyeY();
 
         double diffX = entity.getX() - mc.player.getX();
         double diffY = y - (mc.player.getY() + mc.player.getEyeHeight(mc.player.getPose()));

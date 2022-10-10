@@ -5,7 +5,7 @@ import acme.jungleware.jungle.module.settings.NumberSetting;
 import acme.jungleware.jungle.ui.screens.clickgui.setting.Slider;
 
 public class reach extends Mod {
-    public static NumberSetting range = new NumberSetting("Range", 1.00, 16.00, 4.00, 0.10);
+    public static NumberSetting range = new NumberSetting("Range", 1.00, 7.00, 4.00, 0.10);
     public static boolean enabled = false;
 
 

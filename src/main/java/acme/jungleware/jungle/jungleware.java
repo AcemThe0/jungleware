@@ -8,6 +8,7 @@ import acme.jungleware.jungle.module.Mod;
 import net.minecraft.client.MinecraftClient;
 import acme.jungleware.jungle.module.ModuleMan;
 import acme.jungleware.jungle.ui.screens.clickgui.ClickGUI;
+import net.minecraft.client.gui.screen.ingame.HandledScreen;
 
 public class jungleware implements ModInitializer {
 
@@ -25,13 +26,13 @@ public class jungleware implements ModInitializer {
 	
 	public void onKeyPress(int key, int action) {
 		if (action == GLFW.GLFW_PRESS && mc.player != null) {
-			//if (mc.player.currentScreen != null) {
+			if (!(mc.currentScreen instanceof HandledScreen)) {
 				for (Mod module : ModuleMan.INSTANCE.getModules()) {
 				if (key == module.getKey()) module.toggle();
 				}
 
 				if (key == GLFW.GLFW_KEY_RIGHT_SHIFT) mc.setScreen(ClickGUI.INSTANCE);
-			//}
+			}
 		}
 	}
 	
