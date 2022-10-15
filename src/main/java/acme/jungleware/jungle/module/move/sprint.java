@@ -30,7 +30,7 @@ public class sprint extends Mod {
             break;
 
             case "MonkeyHop":
-            mc.player.airStrafingSpeed = speed.getValueFloat();
+            mc.player.airStrafingSpeed = speed.getValueFloat(); 
             break;
         }
         if (jump.isEnabled()) {

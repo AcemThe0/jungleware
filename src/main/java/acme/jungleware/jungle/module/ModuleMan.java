@@ -47,7 +47,7 @@ public class ModuleMan {
         modules.add(new sprint());
         modules.add(new jockey());
 
-        modules.add(new sense());
+        modules.add(new esp());
         modules.add(new spinbot());
         modules.add(new bright());
         //modules.add(new time());

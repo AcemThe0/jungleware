@@ -73,7 +73,7 @@ public class ModuleButton {
         }
 
         for (Component component : components) {
-            component.mouseClicked(mouseX, mouseY, button);
+            if (extended) component.mouseClicked(mouseX, mouseY, button);
         }
     }
 
