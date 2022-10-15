@@ -14,7 +14,7 @@ import acme.jungleware.jungle.ui.screens.clickgui.setting.CheckBox;
 public class sprint extends Mod {
     public NumberSetting speed = new NumberSetting("Speed", 0.00, 10.00, 0.10, 0.10);
     public NumberSetting height = new NumberSetting("Height", 0.10, 5.00, 0.50, 0.10);
-    public ModeSetting mode = new ModeSetting("Mode", "MonkeyHop", "PlaceHolder", "MonkeyHop");
+    public ModeSetting mode = new ModeSetting("Mode", "MonkeyHop", "Speed", "MonkeyHop");
     public BooleanSetting jump = new BooleanSetting("AutoJump", true);
 
     public sprint() {

@@ -1,5 +1,6 @@
 package acme.jungleware.jungle.module.misc;
 
+import acme.jungleware.jungle.utils.chatUtils;
 import acme.jungleware.jungle.module.Mod;
 import acme.jungleware.jungle.ui.screens.clickgui.setting.Slider;
 import acme.jungleware.jungle.ui.screens.clickgui.setting.ModeBox;
@@ -20,7 +21,13 @@ public class testmodule extends Mod {
 
     @Override
     public void onEnable() {
-        //do thing
-        super.onTick();
+        chatUtils.message("Eek ook!");
+        if (check.isEnabled()) chatUtils.message("OOK; " + slide.getValueInt());
+    }
+
+    @Override
+    public void onDisable() {
+        chatUtils.error("Ook eek!");
+        if (check.isEnabled() && mode.getMode() == "Test2") chatUtils.warn("EEK; " + mode.getMode());
     }
 }

@@ -42,7 +42,7 @@ public class Frame {
     }
 
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        mc.textRenderer.drawWithShadow(matrices, "Jungleware0.3.4", 0, 0, new Color(logo.red.getValueInt(), logo.green.getValueInt(), logo.blue.getValueInt(), logo.alpha.getValueInt()).getRGB());
+        mc.textRenderer.drawWithShadow(matrices, "Jungleware0.3.5", 0, 0, new Color(logo.red.getValueInt(), logo.green.getValueInt(), logo.blue.getValueInt(), logo.alpha.getValueInt()).getRGB());
         DrawableHelper.fill(matrices, x, y, x+width, y+height, new Color(0, 0, 0, 180).getRGB());
         
         mc.textRenderer.drawWithShadow(matrices, category.name, x+2, y+((height/2)-mc.textRenderer.fontHeight/2), new Color(0, 190, 0, 180).getRGB());
