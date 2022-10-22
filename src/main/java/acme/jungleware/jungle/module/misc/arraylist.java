@@ -11,7 +11,7 @@ public class arraylist extends Mod {
     public static NumberSetting alpha = new NumberSetting("Alpha", 25.00, 255.00, 255.00, 1.00);
 
     public arraylist() {
-        super("Arraylist", "Modules!", Category.CHIMPSEE);
+        super("Arraylist", "Modules!", Category.CHIMPHUD);
         addSettings(red, green, blue, alpha);
     }
 

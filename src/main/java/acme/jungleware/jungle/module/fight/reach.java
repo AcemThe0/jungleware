@@ -10,7 +10,7 @@ public class reach extends Mod {
 
 
     public reach() {
-        super("Reach", "Orangutan hands!", Category.CHIMP);
+        super("Reach", "Orangutan hands!", Category.CHIMPING);
         addSetting(range);
     }
 

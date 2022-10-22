@@ -11,23 +11,42 @@ import acme.jungleware.jungle.module.settings.BooleanSetting;
 
 public class testmodule extends Mod {
     public NumberSetting slide = new NumberSetting("slider", 0, 10, 3, 1);
-    public BooleanSetting check = new BooleanSetting("check", true);
+    public BooleanSetting check = new BooleanSetting("check", false);
     public ModeSetting mode = new ModeSetting("Mode", "Test1","Test1","Test2","Test3");
     
     public testmodule() {
-        super("TestModule", "codemonkey", Category.CHIMPSEE);
+        super("TestModule", "codemonkey", Category.CHIMPGUI);
         addSettings(slide, check, mode);
     }
 
     @Override
     public void onEnable() {
-        chatUtils.message("Eek ook!");
-        if (check.isEnabled()) chatUtils.message("OOK; " + slide.getValueInt());
+        if (check.isEnabled()) {
+            switch (mode.getMode()) {
+                case "Test1":
+                chatUtils.message("EEK!");
+                break;
+                case "Test2":
+                chatUtils.warn("EEK!");
+                break;
+                case "Test3":
+                chatUtils.error("EEK!");
+                break;
+            }
+        }
     }
 
     @Override
     public void onDisable() {
-        chatUtils.error("Ook eek!");
-        if (check.isEnabled() && mode.getMode() == "Test2") chatUtils.warn("EEK; " + mode.getMode());
+        if (!check.isEnabled()) {
+            switch (mode.getMode()) {
+                case "Test1":
+                chatUtils.sendMsg("Hello!");
+                break;
+                case "Test2":
+                chatUtils.sendMsg("/w " + mc.player.getEntityName() + " Hello!");
+                break;
+            }
+        }
     }
 }

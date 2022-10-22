@@ -42,11 +42,11 @@ public class Frame {
     }
 
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        mc.textRenderer.drawWithShadow(matrices, "Jungleware0.3.5", 0, 0, new Color(logo.red.getValueInt(), logo.green.getValueInt(), logo.blue.getValueInt(), logo.alpha.getValueInt()).getRGB());
+        mc.textRenderer.drawWithShadow(matrices, "Jungleware1.0.0", 0, 0, new Color(logo.red.getValueInt(), logo.green.getValueInt(), logo.blue.getValueInt(), logo.alpha.getValueInt()).getRGB());
         DrawableHelper.fill(matrices, x, y, x+width, y+height, new Color(0, 0, 0, 180).getRGB());
         
-        mc.textRenderer.drawWithShadow(matrices, category.name, x+2, y+((height/2)-mc.textRenderer.fontHeight/2), new Color(0, 190, 0, 180).getRGB());
-        mc.textRenderer.drawWithShadow(matrices, extended ? "x" : "+", x+width-2-mc.textRenderer.getWidth("x"), y+((height/2)-mc.textRenderer.fontHeight/2), new Color(0, 190, 0, 255).getRGB());
+        mc.textRenderer.drawWithShadow(matrices, category.name, x+2, y+((height*0.5f)-mc.textRenderer.fontHeight*0.5f), new Color(0, 190, 0, 180).getRGB());
+        mc.textRenderer.drawWithShadow(matrices, extended ? "x" : "+", x+width-2-mc.textRenderer.getWidth("x"), y+(((float)height*0.5f)-mc.textRenderer.fontHeight*0.5f), new Color(0, 190, 0, 255).getRGB());
 
         if (extended) {
             for (ModuleButton button : buttons) {

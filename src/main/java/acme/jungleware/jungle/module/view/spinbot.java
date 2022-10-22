@@ -11,7 +11,7 @@ public class spinbot extends Mod {
     float rotation = 0;
 
     public spinbot() {
-        super("Monkespin", "TF2", Category.MONKEYSEE);
+        super("Monkespin", "Spinbot!", Category.MONKEYSEE);
         addSettings(speed, pitch);
     }
 

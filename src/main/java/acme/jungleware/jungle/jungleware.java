@@ -19,19 +19,16 @@ public class jungleware implements ModInitializer {
 	
 	@Override
 	public void onInitialize() {
-		//   /V/craft approved!
+		//   No longer /V/craft approved!
 	
 		LOGGER.info("OOK!");
 	}
 	
 	public void onKeyPress(int key, int action) {
-		if (action == GLFW.GLFW_PRESS && mc.player != null) {
-			if (!(mc.currentScreen instanceof HandledScreen)) {
-				for (Mod module : ModuleMan.INSTANCE.getModules()) {
-				if (key == module.getKey()) module.toggle();
-				}
-
+		if (action == GLFW.GLFW_PRESS && mc.player != null && mc.currentScreen == null) {
+			for (Mod module : ModuleMan.INSTANCE.getModules()) {
 				if (key == GLFW.GLFW_KEY_RIGHT_SHIFT) mc.setScreen(ClickGUI.INSTANCE);
+				if (key == module.getKey()) module.toggle();
 			}
 		}
 	}

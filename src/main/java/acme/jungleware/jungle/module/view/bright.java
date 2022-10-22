@@ -7,7 +7,7 @@ import acme.jungleware.jungle.module.settings.NumberSetting;
 import acme.jungleware.jungle.ui.screens.clickgui.setting.Slider;
 
 public class bright extends Mod {
-    public NumberSetting gamma = new NumberSetting("Gamma", 0, 255, 255, 0.1);
+    public NumberSetting gamma = new NumberSetting("Gamma", 0, 10, 10, 0.1);
 
     public bright() {
         super("Nightvision", "Lurk.", Category.MONKEYSEE);
@@ -15,7 +15,7 @@ public class bright extends Mod {
         addSettings(gamma);
     }
 
-    private static void setGamma(double gamma) {
+    public static void setGamma(double gamma) {
     ((SimpleOptionMixin) (Object) mc.options.getGamma()).forceSetValue(gamma);
     }
 

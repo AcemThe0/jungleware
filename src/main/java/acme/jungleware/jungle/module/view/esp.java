@@ -4,36 +4,49 @@ import java.util.List;
 import java.util.ArrayList;
 import net.minecraft.entity.Entity;
 import acme.jungleware.jungle.module.Mod;
-import acme.jungleware.jungle.module.settings.ModeSetting;
+import net.minecraft.entity.player.PlayerEntity;
 import acme.jungleware.jungle.module.settings.BooleanSetting;
-import acme.jungleware.jungle.ui.screens.clickgui.setting.ModeBox;
 import acme.jungleware.jungle.ui.screens.clickgui.setting.CheckBox;
 
 public class esp extends Mod {
-    public BooleanSetting players = new BooleanSetting("JustPlayers", true);
-
     private List<Entity> targetEntities = new ArrayList<>();
+    public BooleanSetting invisibles = new BooleanSetting("invisibles", true);
 
     public esp() {
-        super("Smell", "Sense the nearby's!", Category.MONKEYSEE);
-        addSetting(players);
+        super("Smell", "Sense nearby users!", Category.MONKEYSEE);
+        addSetting(invisibles);
+        get = this;
     }
 
     @Override
     public void onTick() {
-        mc.world.getEntities().forEach(entity -> {
-            if (entity.isInvisible() && !targetEntities.contains(entity)) {
-                targetEntities.add(entity);
-                entity.setInvisible(false);
-            }
-        });
+        if (invisibles.isEnabled()) {
+            mc.world.getEntities().forEach(entity -> {
+                if (entity.isInvisible() && !targetEntities.contains(entity)) {
+                    targetEntities.add(entity);
+                    entity.setInvisible(false);
+                }
+            });
+        }
     super.onTick();
     }
 
     @Override
     public void onDisable() {
-        targetEntities.forEach(entity -> {entity.setInvisible(true);});
-        targetEntities.clear();
+        if (invisibles.isEnabled()) {
+            targetEntities.forEach(entity -> {entity.setInvisible(true);});
+            targetEntities.clear();
+        }
     super.onDisable();
     }
+
+    
+    public boolean shouldRenderEntity(Entity entity) {
+        if (!isEnabled()) return false;
+        if (entity == null) return false;
+        
+        return true;
+    }
+
+    public static esp get;
 }

@@ -12,7 +12,7 @@ public class coordinates extends Mod {
     public static NumberSetting alpha = new NumberSetting("Alpha", 25.00, 255.00, 255.00, 1.00);
 
     public coordinates() {
-        super("Homing", "Find your location!", Category.CHIMPSEE);
+        super("Homing", "Find your location!", Category.CHIMPHUD);
         addSettings(red, green, blue, alpha);
     }
 

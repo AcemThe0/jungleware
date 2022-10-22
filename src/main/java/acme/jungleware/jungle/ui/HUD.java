@@ -34,7 +34,7 @@ public class HUD {
             mc.textRenderer.drawWithShadow(matrices, coords, (sWidth - 4) - mc.textRenderer.getWidth(coords), sHeight-15, new Color(coordinates.red.getValueInt(), coordinates.green.getValueInt(), coordinates.blue.getValueInt(), coordinates.alpha.getValueInt()).getRGB());
 
             for (Mod module : ModuleMan.INSTANCE.getEnabledModules()) {
-                mc.textRenderer.drawWithShadow(matrices, module.getName(), (sWidth - 4) - mc.textRenderer.getWidth(module.getName()), 10 + (index * mc.textRenderer.fontHeight), new Color(arraylist.red.getValueInt(), arraylist.green.getValueInt(), arraylist.blue.getValueInt(), arraylist.alpha.getValueInt()).getRGB());
+                mc.textRenderer.drawWithShadow(matrices, module.getName(), (sWidth - 4) - mc.textRenderer.getWidth(module.getName()), 20 + (index * mc.textRenderer.fontHeight), new Color(arraylist.red.getValueInt(), arraylist.green.getValueInt(), arraylist.blue.getValueInt(), arraylist.alpha.getValueInt()).getRGB());
                 index++;
             }
     }

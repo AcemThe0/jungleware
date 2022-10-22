@@ -29,7 +29,7 @@ public class killaura extends Mod {
     public BooleanSetting lock = new BooleanSetting("Lock", false);
 
     public killaura() {
-        super("Gorilla", "CHIMPOUT!", Category.CHIMP);
+        super("Gorilla", "CHIMPOUT!", Category.CHIMPING);
         addSettings(range, maxOffset, offset, attack, players, name, rotate, lock);
     }
 

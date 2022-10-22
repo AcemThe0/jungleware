@@ -10,7 +10,7 @@ public class timer extends Mod {
 
 
     public timer() {
-        super("Timer", "Limitless.", Category.CHIMP);
+        super("Timer", "Limitless.", Category.CHIMPING);
         addSetting(multiplier);
     }
 

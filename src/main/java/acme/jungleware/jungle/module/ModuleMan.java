@@ -45,14 +45,16 @@ public class ModuleMan {
         modules.add(new fly());
         modules.add(new nofall());
         modules.add(new sprint());
+        modules.add(new jesus());
         modules.add(new jockey());
 
-        modules.add(new esp());
         modules.add(new spinbot());
         modules.add(new bright());
+        modules.add(new xray());
+        modules.add(new esp());
         //modules.add(new time());
 
-        //modules.add(new totem());
+        modules.add(new totem());
         modules.add(new timer());
         modules.add(new reach());
         modules.add(new killaura());

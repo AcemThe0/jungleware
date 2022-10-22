@@ -6,14 +6,16 @@
   "mixins": [
   ],
   "client": [
+    "HUDMixin",
+    "BlockRender",
     "ClientMixin",
     "KeyboardMixin",
-    "HUDMixin",
     "SimpleOptionMixin",
-    "PlayerMoveC2SPacketAccessor",
-    "RenderTickCounterMixin",
     "HorseBaseEntityMixin",
+    "RenderTickCounterMixin",
     "ClientPlayerEntityAccessor",
+    "RenderEntityDispatcherMixin",
+    "PlayerMoveC2SPacketAccessor",
     "ClientPlayerInteractionManagerMixin"
 
   ],
